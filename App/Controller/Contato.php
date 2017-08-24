@@ -21,9 +21,14 @@ class Contato extends Action
 
 	public function novo()
 	{
-		if ($_POST) {
-			$nome = Container::getClass("contato");
-			$this->view->contato =
+		if (isset($_POST['name']) && strlen($_POST['name'])>5) {
+			$nome = $_POST['name'];
+			$celular = $_POST['celular'];
+			$endereco = $_POST['endereco'];
+			$email = $_POST['email'];
+
+			$contato = Container::getClass("contato");
+			$contato->contatoSave($nome, $celular, $endereco, $email);
 			$this->render('novo');
 		}
 		else{

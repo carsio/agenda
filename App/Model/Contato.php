@@ -25,13 +25,15 @@ class Contato{
 		return $result; 
 	}
 
-	public function contatoSave()
+	public function contatoSave($nome, $celular, $endereco, $email)
 	{
 		$query = "INSERT INTO CONTATOS
 		(id, nome, celular, endereco, email)
 		VALUES
-		(DEFAULT, '');
+		(DEFAULT, '$nome', '$celular', '$endereco', '$email');
 		";
+		$stmt = $this->db->prepare($query);
+		$stmt->execute();
 
 	}
 
