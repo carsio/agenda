@@ -1,0 +1,20 @@
+{
+	"name": "php/php",
+
+	"require":{
+		"php":">=5.3" 
+	},
+
+	"minimum-stability":"alpha",
+
+	"autoload":{
+		"psr-4":{
+			"App\\":"App/",
+			"SON\\":"vendor/SON"
+		}
+	},
+
+	"config":{
+		"bin-dir":"bin"
+	}
+}

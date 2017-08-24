@@ -1,0 +1,66 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h2 class="text-center">Novo Contato</h2>
+		<form class="col-sm-10 col-sm-offset-1" action="/novo" method="post">
+			<div class="form-group col">
+				<label for="inputName">Nome <span style="color: red">*</span></label>
+				<input type="text" class="form-control" id="inputName" placeholder="ex. Jon Snow" name="name" value="" required>						
+			</div>
+
+			<div class="form-group">
+				<label for="inputCelular">Celular</label>
+				<input type="text" class="form-control" id="inputEmail" placeholder="ex. 99112-2410">
+			</div>
+
+			<div class="form-group">
+				<label for="inputEmail">Endereço</label>
+				<input type="text" class="form-control" id="inputEndereco" placeholder="ex. Rua Tal N25">
+			</div>
+
+			<div class="form-group">
+				<label for="inputEmail">Email</label>
+				<input type="email" class="form-control" id="inputEmail" placeholder="ex. jon@snow.com">
+			</div>
+
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary form-control" value="Cadastrar">
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		
+		<?php 
+			if ($_POST) {
+				if (isset($_POST['name']) && strlen($_POST['name'])>5) {
+					?>
+					<div class="alert alert-success alert-dismissible" role="alert" id="teste">
+						<button id="myAlert" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<strong>Parabéns!</strong> <?php echo $_POST['name']." foi cadastrado na sua agenda" ?>.
+					</div>
+					<?php
+				}else{
+					?>
+					<div class="alert alert-danger alert-dismissible" role="alert" id="teste">
+						<button id="myAlert" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<strong>Nome</strong> completo precisa ser informado.
+					</div>
+					<?php 
+				}
+			}
+		?>
+	</div>
+</div>
+
+<script src="bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+	$(document).ready(function(){
+		$("#myAlert").click(function(){
+			$("#teste").hide();
+		});
+	});
+</script>
