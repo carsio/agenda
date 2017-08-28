@@ -23,9 +23,7 @@ class Init extends Bootstrap
 	public static function getDb(){
 
 		/* Connect to a MySQL database using driver invocation */
-		$dsn = 'mysql:dbname=mvc;host=127.0.0.1';
-		$user = 'root';
-		$password = '';
+		require_once 'DB_config.php';
 
 		try {
 		    $conn = new PDO($dsn, $user, $password);

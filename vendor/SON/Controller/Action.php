@@ -16,8 +16,8 @@ class Action
 	{	
 		$this->action = $action;
 
-		if ($layout == true && file_exists("../App/View/layout.phtml ")) {
-			include_once '../App/View/layout.phtml';
+		if ($layout == true && file_exists("../App/View/layout.php")) {
+			require_once '../App/View/layout.php';
 		}
 		else{
 			$this->content();

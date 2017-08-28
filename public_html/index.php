@@ -3,7 +3,7 @@
 require_once '../vendor/autoload.php';
 
 
-$rota = new App\init();
+$rota = new App\Init();
 
 
 

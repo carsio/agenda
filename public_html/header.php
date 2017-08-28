@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<title>Agenda</title>
 	<link href="http://10.1.8.28/sistemas/agenciavirtual/public/img/eletrobras-logo.png" rel="icon" type="image"/>
 	<meta charset="utf-8">
@@ -20,7 +21,7 @@
 
 	  	<div class="container-fluid">
 	    	<div class="navbar-header">
-	     		<a class="navbar-brand" href="http://agenda.com/contato">
+	     		<a class="navbar-brand" href="https://carsio.000webhostapp.com/contato">
 	       			<img alt="Agenda" src="...">
 	      		</a>
 	    	</div>
@@ -30,11 +31,11 @@
 	    		<ul class="nav navbar-nav navbar navbar-right">
 	    			<li>
 	    				<div class="btn-group navbar-btn" role="group" aria-label="...">
-	    					<button class="btn btn-default" onclick="location.href='http://agenda.com/novo'">
+	    					<button class="btn btn-default" onclick="location.href='https://carsio.000webhostapp.com/novo'">
 	    						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	    						Novo Contato
 	    					</button>
-	    					<button class="btn btn-default" onclick="location.href='http://agenda.com/contato';" id="myButton">
+	    					<button class="btn btn-default" onclick="location.href='https://carsio.000webhostapp.com/contato';" id="myButton">
 	    						<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
 	    						Contatos
 	    					</button>
