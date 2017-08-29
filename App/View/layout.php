@@ -1,14 +1,14 @@
+<?php 
+	session_start();
 
-<?php require_once 'header.php'; ?>
+	if (isset($_SESSION['id_user']) || isset($_SESSION['nome_user']))
+		require_once 'header.php';
+	else
+		require_once 'header-standart.php';
+ ?>
 
 <div class="container">
 	<?php $this->content(); ?>
 </div>
-
-<!-- <script type="text/javascript">
-    document.getElementById("myButton").onclick = function () {
-        location.href = "http://agenda.com/contato";
-    };
-</script> -->
 </body>
 </html>

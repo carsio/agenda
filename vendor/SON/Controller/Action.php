@@ -16,12 +16,10 @@ class Action
 	{	
 		$this->action = $action;
 
-		if ($layout == true && file_exists("../App/View/layout.php")) {
+		if ($layout == true && file_exists("../App/View/layout.php"))
 			require_once '../App/View/layout.php';
-		}
-		else{
+		else
 			$this->content();
-		}
 	}
 
 	protected function content()

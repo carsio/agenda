@@ -1,3 +1,10 @@
-<h1>Eu sou o Conteúdo</h1>
+<?php 
+	if (isset($_SESSION['id_user']) || isset($_SESSION['nome_user']))
+		header("Location: https://".$_SERVER['SERVE_NAME']."/contato");
+ ?>
 
-<div class="alert alert-success" role="alert">Cadastrado com sucesso</div>
+<h1>Agenda Virtual - CRUD - MVC</h1>
+
+<p>
+	Cadastre-se ou logue-se para poder usar.
+</p>

@@ -21,7 +21,7 @@
 
 	  	<div class="container-fluid">
 	    	<div class="navbar-header">
-	     		<a class="navbar-brand" href=<?php echo "https://".$_SERVER['SERVER_NAME']."/contato"; ?>>
+	     		<a class="navbar-brand" href="https://carsio.000webhostapp.com/contato">
 	       			Agenda Virtual
 	      		</a>
 	    	</div>
@@ -31,26 +31,17 @@
 	    		<ul class="nav navbar-nav navbar navbar-right">
 	    			<li>
 	    				<div class="btn-group navbar-btn" role="group" aria-label="...">
-	    					<button class="btn btn-default" onclick="location.href='https://carsio.000webhostapp.com/novo'">
+
+	    					<button class="btn btn-default" onclick="location.href= <?php echo "https://".$_SERVER['SERVER_NAME']."/entrar"; ?> >
 	    						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-	    						Novo Contato
+	    						Entrar
 	    					</button>
-	    					<button class="btn btn-default" onclick="location.href='https://carsio.000webhostapp.com/contato';" id="myButton">
+
+	    					<button class="btn btn-default" onclick=<?php echo "https://".$_SERVER['SERVER_NAME']."/registar"; ?>>
 	    						<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-	    						Contatos
+	    						Registrar
 	    					</button>
-	    					<button class="btn btn-default">
-	    						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-	    						Perfil
-	    					</button>
-	    					<button class="btn btn-default">
-	    						<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-	    						Sobre
-	    					</button>
-	    					<button class="btn btn-default">
-	    						<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-	    						Sair
-	    					</button>
+	    					
 	    				</div>
 	    			</li>
 	    			</ul>
