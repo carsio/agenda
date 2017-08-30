@@ -44,7 +44,7 @@ abstract class Bootstrap
 		$this->routes = $routes;
 	}
 
-	protected function getURL(){
+	public static function getURL(){
 		return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 	}	
 }

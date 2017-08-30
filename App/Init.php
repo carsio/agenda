@@ -17,6 +17,8 @@ class Init extends Bootstrap
 		$ar['contato'] = array('route' => '/contato', 'controller' => 'contato', 'action' => 'contato');
 		$ar['novo'] = array('route' => '/novo', 'controller' => 'contato', 'action' => 'novo');
 		$ar['menu'] = array('route' => '/menu', 'controller' => 'menu', 'action' => 'menu');
+		$ar['entrar'] = array('route' => '/entrar', 'controller'=>'entrar', 'action'=>'logar');
+		$ar['registrar'] = array('route' => '/registrar', 'controller' => 'registrar', 'action' => 'registrar');
 		$this->setRoutes($ar);
 	}
 

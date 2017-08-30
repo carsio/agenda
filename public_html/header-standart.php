@@ -32,13 +32,13 @@
 	    			<li>
 	    				<div class="btn-group navbar-btn" role="group" aria-label="...">
 
-	    					<button class="btn btn-default" onclick="location.href= <?php echo "https://".$_SERVER['SERVER_NAME']."/entrar"; ?> >
-	    						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	    					<button class="btn btn-default" onclick="location.href='<?php echo "https://".$_SERVER['SERVER_NAME']."/entrar"; ?>'">
+	    						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 	    						Entrar
 	    					</button>
 
-	    					<button class="btn btn-default" onclick=<?php echo "https://".$_SERVER['SERVER_NAME']."/registar"; ?>>
-	    						<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+	    					<button class="btn btn-default" onclick="location.href='<?php echo "https://".$_SERVER['SERVER_NAME']."/registar"; ?>'">
+	    						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	    						Registrar
 	    					</button>
 	    					
