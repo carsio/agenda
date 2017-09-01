@@ -31,23 +31,23 @@
 	    		<ul class="nav navbar-nav navbar navbar-right">
 	    			<li>
 	    				<div class="btn-group navbar-btn" role="group" aria-label="...">
-	    					<button class="btn btn-default" onclick="location.href='https://carsio.000webhostapp.com/novo'">
+	    					<button class="btn btn-default" onclick="location.href='/novo'">
 	    						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	    						Novo Contato
 	    					</button>
-	    					<button class="btn btn-default" onclick="location.href='https://carsio.000webhostapp.com/contato';" id="myButton">
+	    					<button class="btn btn-default" onclick="location.href='/contato';" id="myButton">
 	    						<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
 	    						Contatos
 	    					</button>
 	    					<button class="btn btn-default">
 	    						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-	    						Perfil
+	    						<?php echo $_SESSION['nome_user']; ?>
 	    					</button>
 	    					<button class="btn btn-default">
 	    						<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
 	    						Sobre
 	    					</button>
-	    					<button class="btn btn-default">
+	    					<button class="btn btn-default" onclick="location.href='/sair'">
 	    						<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
 	    						Sair
 	    					</button>
