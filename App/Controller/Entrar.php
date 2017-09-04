@@ -19,7 +19,7 @@ class Entrar extends Action
 	{
 		if (isset($_POST['userEmail']) && isset($_POST['userPass'])) {
 			$autenticao = Container::getClass('entrar');
-			$autenticao->logar($_POST['userEmail'], $_POST['userPass']);
+			$autenticao->logar($_POST['userEmail'], md5($_POST['userPass']));
 		}
 		else{
 			header("location: https://".$_SERVER['SERVER_NAME']."/entrar");

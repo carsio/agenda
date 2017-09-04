@@ -1,0 +1,105 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h2 class="text-center">Registre-se</h2>
+		<form class="col-sm-10 col-sm-offset-1" action="/registrarUser" method="post">
+
+			<div class="form-group col">
+				<label for="inputName">Nome <span style="color: red">*</span></label>
+				<input type="text" class="form-control" id="inputName" placeholder="ex. Jon Snow" name="name" value="" required>		
+			</div>
+
+			<div class="form-group col">
+				<label for="inputDate">Nascimento <span style="color: red">*</span></label>
+				<input type="date" class="form-control" id="inputDate" placeholder="Nascimento" name="nascimento" value="" required>		
+			</div>
+
+			<div class="form-group">
+				<label for="inputCelular">Celular<span style="color: red">*</span></label>
+				<input type="text" class="form-control" id="inputCelular" placeholder="ex. 99999-9999" name="celular" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="inputEmail">Email<span style="color: red">*</span></label>
+				<input type="email" class="form-control email" id="inputEmail" placeholder="ex. jon@snow.com" name="email" required>
+			</div>
+
+			<div class="form-group">
+				<label for="inputEmailConfirm">Confirmar Email<span style="color: red">*</span></label>
+				<input type="email" class="form-control email" id="inputEmailConfirm" placeholder="ex. jon@snow.com" name="emailConfirm" required>
+			</div>
+
+			<div class="form-group">
+				<label for="inputPass">Senha<span style="color: red">*</span></label>
+				<input type="password" class="form-control password" id="inputPass" placeholder="Senha" name="pass" required>
+			</div>
+
+			<div class="form-group">
+				<label for="inputPassConfirm">Confirmar Senha<span style="color: red">*</span></label>
+				<input type="password" class="form-control password" id="inputPassConfirm" placeholder="Confirmar Senha" name="passConfirm" required>
+			</div>
+
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary form-control" value="Registre-se" required>
+			</div>
+		</form>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-offset-3">
+			<div class="alert alert-danger alert-dismissible" role="alert" id="msgEmail">
+				<button id="myAlert" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+				</button><strong>Email não coincide!</strong>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-offset-3">
+			<div class="alert alert-danger alert-dismissible" role="alert" id="msgSenha">
+				<button id="myAlertSenha" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+				</button><strong>Senha não coincide!</strong>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		jQuery(document).ready(function($) {
+			
+			$("#msgEmail").hide();
+			$("#msgSenha").hide();
+
+			inputEmail = document.getElementById('inputEmail');
+			inputEmailConfirm = document.getElementById('inputEmailConfirm');
+
+			inputPass = document.getElementById('inputPass');
+			inputPassConfirm = document.getElementById('inputPassConfirm');
+
+
+
+			$(".email").focusout(function(event) {
+				if (inputEmail.value != inputEmailConfirm.value) {
+					$("#msgEmail").show();
+				}
+				else{
+					$("#msgEmail").hide();
+				}
+			});
+
+			$("#myAlert").click(function(event) {
+				$("#msgEmail").hide();
+			});
+
+			$(".password").focusout(function(event) {
+				if (inputPass.value != inputPassConfirm.value) {
+					$("#msgSenha").show();
+				}
+				else{
+					$("#msgSenha").hide();
+				}
+			});
+
+			$("#myAlertSenha").click(function(event) {
+				$("#msgSenha").hide();
+			});
+
+
+		});
+
+	</script>

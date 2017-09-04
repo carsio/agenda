@@ -20,6 +20,7 @@ class Init extends Bootstrap
 		$ar['entrar'] = array('route' => '/entrar', 'controller'=>'entrar', 'action'=>'logar');
 		$ar['autenticar'] = array('route' => '/autenticar', 'controller'=>'entrar', 'action'=>'autenticar');
 		$ar['registrar'] = array('route' => '/registrar', 'controller' => 'registrar', 'action' => 'registrar');
+		$ar['registrarUser'] = array('route' => '/registrarUser', 'controller' => 'registrar', 'action' => 'registrarUser');
 		$ar['sair'] = array('route' => '/sair', 'controller' => 'entrar', 'action' => 'sair');
 
 		$this->setRoutes($ar);

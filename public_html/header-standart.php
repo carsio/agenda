@@ -37,7 +37,7 @@
 	    						Entrar
 	    					</button>
 
-	    					<button class="btn btn-default" onclick="location.href='<?php echo "https://".$_SERVER['SERVER_NAME']."/registar"; ?>'">
+	    					<button class="btn btn-default" onclick="location.href='<?php echo "https://".$_SERVER['SERVER_NAME']."/registrar"; ?>'">
 	    						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	    						Registrar
 	    					</button>
