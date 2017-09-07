@@ -26,4 +26,15 @@ class User
 		$stmt->execute();
 	}
 
+	public function consultaDips($email)
+	{
+		$query = "SELECT * FROM users WHERE email ='".$email."'";
+		$stmt = $this->db->prepare($query);
+		$stmt->execute();
+		$fetch = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$result = $stmt->fetchAll();
+
+		return count($result)==0 ? 1 : 0 ;
+	}
+
 }

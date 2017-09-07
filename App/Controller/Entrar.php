@@ -12,6 +12,14 @@ class Entrar extends Action
 	public function logar()
 	{
 
+		session_start();
+
+		if (isset($_SESSION['email'])) {
+			$this->view->email = $_SESSION['email'];
+		}
+
+		session_destroy();
+
 		$this->render('entrar');
 	}
 

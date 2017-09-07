@@ -25,8 +25,6 @@ class Entrar
 		$user = $result[0];
 
 		if (count($result)==1 && $user['email'] == $userEmail && $user['pass'] == $pass) {
-			
-			
 			session_start();
 			$_SESSION['id_user'] = $user['id'];
 			$_SESSION['nome_user'] = $this->primeiroNome($user['nome']);

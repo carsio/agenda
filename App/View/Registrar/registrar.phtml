@@ -1,21 +1,21 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<h2 class="text-center">Registre-se</h2>
-		<form class="col-sm-10 col-sm-offset-1" action="/registrarUser" method="post">
+		<form class="col-sm-10 col-sm-offset-1" id="form" method="post" name="formRegistrar">
 
 			<div class="form-group col">
 				<label for="inputName">Nome <span style="color: red">*</span></label>
-				<input type="text" class="form-control" id="inputName" placeholder="ex. Jon Snow" name="name" value="" required>		
+				<input type="text" class="form-control" id="inputName" placeholder="ex. Jon Snow" name="name" <?php if(isset($_POST['name'])) echo "value=".$_POST['name'];?> required>		
 			</div>
 
 			<div class="form-group col">
 				<label for="inputDate">Nascimento <span style="color: red">*</span></label>
-				<input type="date" class="form-control" id="inputDate" placeholder="Nascimento" name="nascimento" value="" required>		
+				<input type="date" class="form-control" id="inputDate" placeholder="Nascimento" name="nascimento" <?php if(isset($_POST['nascimento'])) echo "value=".$_POST['nascimento'];?> required>		
 			</div>
 
 			<div class="form-group">
 				<label for="inputCelular">Celular<span style="color: red">*</span></label>
-				<input type="text" class="form-control" id="inputCelular" placeholder="ex. 99999-9999" name="celular" required>
+				<input type="text" class="form-control" id="inputCelular" placeholder="ex. 99999-9999" name="celular" <?php if(isset($_POST['celular'])) echo "value=".$_POST['celular'];?> required>
 			</div>
 			
 			<div class="form-group">
@@ -39,10 +39,12 @@
 			</div>
 
 			<div class="form-group">
-				<input type="submit" class="btn btn-primary form-control" value="Registre-se" required>
+				<input id="enviar" type="submit" class="btn btn-primary form-control" value="Registre-se" required>
 			</div>
 		</form>
 	</div>
+
+
 	<div class="row">
 		<div class="col-sm-6 col-md-offset-3">
 			<div class="alert alert-danger alert-dismissible" role="alert" id="msgEmail">
@@ -56,22 +58,53 @@
 				</button><strong>Senha não coincide!</strong>
 			</div>
 		</div>
+		<div class="col-sm-6 col-md-offset-3">
+			<div class="alert alert-danger alert-dismissible" role="alert" id="msgReg">
+				<button id="myAlertReg" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+				</button><strong>Erro ao registra-se!</strong> verfique se os campos estão corretos
+			</div>
+		</div>
 	</div>
 
 	<script type="text/javascript">
 
 		jQuery(document).ready(function($) {
-			
+
+			<?php 
+			if ($_POST)	
+				echo '$("#msgReg").show();';
+			else
+				echo '$("#msgReg").hide();';
+			?>
+
 			$("#msgEmail").hide();
 			$("#msgSenha").hide();
 
-			inputEmail = document.getElementById('inputEmail');
-			inputEmailConfirm = document.getElementById('inputEmailConfirm');
+			var inputEmail = document.getElementById('inputEmail');
+			var inputEmailConfirm = document.getElementById('inputEmailConfirm');
 
-			inputPass = document.getElementById('inputPass');
-			inputPassConfirm = document.getElementById('inputPassConfirm');
+			var inputPass = document.getElementById('inputPass');
+			var inputPassConfirm = document.getElementById('inputPassConfirm');
 
 
+			// var inputEmail = document.forms["formRegistrar"]["email"].value;
+			// var inputEmailConfirm = document.forms["formRegistrar"]["emailConfirm"].value;
+
+			// var inputPass = document.forms["formRegistrar"]["pass"].value;
+			// var inputPassConfirm = document.forms["formRegistrar"]["passConfirm"].value;
+
+			// var form = document.getElementById('form');
+		
+			$("#enviar").click(function(event) {
+				if (inputEmail.value!=inputEmailConfirm.value || inputPass.value!=inputPassConfirm.value) {
+					form.setAttribute("action", "/registrar");
+				}
+				else{
+					form.setAttribute("action", "/registrarUser");
+				}
+			});
+
+			//Teste os camos email e password para ver se estão iguais
 
 			$(".email").focusout(function(event) {
 				if (inputEmail.value != inputEmailConfirm.value) {
@@ -80,10 +113,6 @@
 				else{
 					$("#msgEmail").hide();
 				}
-			});
-
-			$("#myAlert").click(function(event) {
-				$("#msgEmail").hide();
 			});
 
 			$(".password").focusout(function(event) {
@@ -95,10 +124,19 @@
 				}
 			});
 
+			//Fecha alertas ao clicar o botao x
+
+			$("#myAlert").click(function(event) {
+				$("#msgEmail").hide();
+			});
+
 			$("#myAlertSenha").click(function(event) {
 				$("#msgSenha").hide();
 			});
 
+			$("#myAlertReg").click(function(event) {
+				$("#msgReg").hide();
+			});
 
 		});
 
