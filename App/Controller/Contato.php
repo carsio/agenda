@@ -3,7 +3,7 @@
 namespace App\Controller;
 use SON\Controller\Action;
 use SON\DI\Container;
-
+session_start();
 /**
 * 
 */
@@ -12,10 +12,11 @@ class Contato extends Action
 	public function contato()
 	{
 		$contato = Container::getClass("contato");
-
-		$contatos = $contato->contatoFetchAll();
-
-		$this->view->contatos = $contatos;
+		if (isset($_SESSION['id_user'])) {
+			$contatos = $contato->contatoFetchAll($_SESSION['id_user']);
+			$this->view->contatos = $contatos;
+		}
+		
 		$this->render('contato');
 	}
 
@@ -28,7 +29,7 @@ class Contato extends Action
 			$email = $_POST['email'];
 
 			$contato = Container::getClass("contato");
-			$contato->contatoSave($nome, $celular, $endereco, $email);
+			$contato->contatoSave($nome, $celular, $endereco, $email, $_SESSION['id_user']);
 			$this->render('novo');
 		}
 		else{

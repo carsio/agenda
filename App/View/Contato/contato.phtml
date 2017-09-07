@@ -17,10 +17,10 @@
 			<td>Rua Não sei o Nome</td>
 			<td>carsio@iphoda.com</td>
 		</tr> -->
-
+		
 		<?php foreach ($this->view->contatos as $contato): ?>
 			<?php echo "<tr>"; ?>
-				<?php echo "<td>". $contato['id'] ."</td>"; ?>
+				<?php echo "<td><input type ='checkbox' name = 'box". $contato['id'] ."' value ='". $contato['id'] ."'></input></td>"; ?>
 				<?php echo "<td>". $contato['nome'] ."</td>"; ?>
 				<?php echo "<td>". $contato['celular'] ."</td>"; ?>
 				<?php echo "<td>". $contato['endereco'] ."</td>"; ?>

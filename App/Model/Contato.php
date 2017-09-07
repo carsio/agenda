@@ -14,9 +14,9 @@ class Contato{
 		
 	}
 
-	public function contatoFetchAll()
+	public function contatoFetchAll($id_user)
 	{
-		$query = "SELECT * FROM contatos";
+		$query = "SELECT * FROM contatos WHERE id_user='$id_user'";
 		$stmt = $this->db->prepare($query);
 		$stmt->execute();
 		$fetch = $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -25,12 +25,12 @@ class Contato{
 		return $result; 
 	}
 
-	public function contatoSave($nome, $celular, $endereco, $email)
+	public function contatoSave($nome, $celular, $endereco, $email, $id_user)
 	{
 		$query = "INSERT INTO contatos
-		(id, nome, celular, endereco, email)
+		(id, nome, celular, endereco, email, id_user)
 		VALUES
-		(DEFAULT, '$nome', '$celular', '$endereco', '$email');
+		(DEFAULT, '$nome', '$celular', '$endereco', '$email', '$id_user');
 		";
 		$stmt = $this->db->prepare($query);
 		$stmt->execute();
