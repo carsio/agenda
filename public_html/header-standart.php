@@ -16,11 +16,11 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container-fluid">
 
 		<nav class="navbar navbar-inverse">
 
-			<div class="container-fluid">
+			<div class="container">
 
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -29,12 +29,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href=<?php echo "https://".$_SERVER['SERVER_NAME']."/contato"; ?>>Agenda Virtual</a>
+					<a class="navbar-brand" href="/contato">Agenda Virtual</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar navbar-right">
-						<li>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/entrar"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Entrar</a></li>
+						<li><a href="/registrar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Registrar</a></li>
+						<!-- <li>
 							<div class="btn-group navbar-btn" role="group" aria-label="...">
 
 								<button class="btn btn-default" onclick="location.href='<?php echo "https://".$_SERVER['SERVER_NAME']."/entrar"; ?>'">
@@ -46,9 +48,8 @@
 									<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 									Registrar
 								</button>
-
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>   
